@@ -4,106 +4,77 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { cn } from "../lib/utils";
 
-export default function About() {
+export default function AboutMe() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden bg-gradient-to-b from-blue-900/20 to-slate-900/40 py-20"
-    >
-      {/* Background effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="caustics-animation absolute inset-0" />
-        <div className="deep-water-pattern absolute inset-0" />
-      </div>
+    <section id="about" className="relative overflow-hidden bg-slate-800 py-20">
+      {/* Underwater ambiance */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-slate-900/40"></div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        {/* Title Area */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            First Dive
-          </h2>
-          <p className="text-cyan-200 text-lg">Getting to know the depths</p>
-        </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
+          First Dive
+        </h2>
 
-        {/* Main Content */}
-        <div
-          ref={ref}
-          className="flex flex-col md:flex-row md:items-start gap-12"
-        >
-          {/* Left Column - Image */}
+        <div ref={ref} className="flex flex-col items-center gap-8 md:flex-row">
           <div
             className={cn(
-              "mx-auto md:mx-0 md:w-1/3 flex-shrink-0",
-              "transition-all duration-1000",
+              "w-full md:w-1/3",
+              "transform transition-all duration-1000",
               inView ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
             )}
           >
-            <div className="relative overflow-hidden rounded-lg shadow-2xl border-2 border-cyan-400/30 w-[50px] h-[50px] mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 to-transparent z-10" />
+            <div className="relative overflow-hidden rounded-lg shadow-2xl border-2 border-cyan-400/30">
               <img
                 src="/images/profile.png"
                 alt="Youran Tao Jensen - Professional portrait"
-                className="w-[50px] h-[50px] object-cover"
+                className="h-auto w-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
             </div>
           </div>
 
-          {/* Right Column - Text */}
           <div
             className={cn(
-              "w-full md:w-2/3 flex flex-col justify-center",
-              "transition-all duration-1000 delay-300",
+              "w-full space-y-6 md:w-2/3",
+              "transform transition-all duration-1000 delay-300",
               inView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
             )}
           >
-            <div className="space-y-4 text-gray-100">
-              <p className="text-lg leading-relaxed">
-                I have a dual background in{" "}
-                <span className="text-cyan-300 font-semibold">business</span>{" "}
-                (HHX & CBS) and{" "}
-                <span className="text-cyan-300 font-semibold">
-                  computer science
-                </span>{" "}
-                (KU Bachelor's and Master's degrees). I am fluent in Danish,
+            <div className="space-y-4 text-gray-100 text-lg">
+              <p>
+                My name is Youran, based in Copenhagen, with a BSc in
+                International Relations in Asia from CBS, and both a Bsc and an
+                MSc in Computer Science from KU, I bridge business and
+                engineering through a multicultural lens. I thrive in
+                international, multilingual environments—fluent in Danish,
                 English, and Chinese.
               </p>
-              <p className="text-lg leading-relaxed">
-                My professional experience spans service, trade, business
-                strategy, and IT development. From entrepreneur and manager to
-                executor, I am familiar with work at{" "}
-                <span className="text-cyan-300 font-semibold">all levels</span>.
+              <p>
+                My career has taken me from founding and managing service
+                startups to hands-on execution in trade, customs, and
+                cross-border operations. I've built SQL-based support software
+                and Power BI reports that inform executive decision-making, and
+                I've UX/UI-designed chatbots and AI-driven automation tools to
+                streamline workflows and elevate user experiences. I have
+                conducted research into dyslexia education support, coral image
+                segmentation, and whale-location tracking.
               </p>
-              <p className="text-lg leading-relaxed">
-                Recently, I completed an exchange program in{" "}
-                <span className="text-cyan-300 font-semibold">Hong Kong</span>,
-                where I participated in Meta's AI chatbot case competition as a
-                UX/UI designer.
+              <p>
+                I think holistically and make forward-looking decisions based on
+                global trends and technological developments. As an INFP, I
+                bring creativity, strong perceptive insight, and analytical
+                rigor—flourishing in roles that value innovation over rigid
+                routines. Now I'm pursuing my solo-founder AI unicorn startup.
               </p>
-            </div>
-
-            {/* Language Badges */}
-            <div className="flex flex-wrap gap-3 mt-6">
-              {["Danish", "English", "Chinese"].map((lang) => (
-                <span
-                  key={lang}
-                  className="px-3 py-1 bg-cyan-400/20 text-cyan-200 rounded-full text-sm border border-cyan-400/30"
-                >
-                  {lang}
-                </span>
-              ))}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom wave effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-800 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1440 320\'%3E%3Cpath fill=\'%230ea5e9\' fill-opacity=\'0.2\' d=\'M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z\'%3E%3C/path%3E%3C/svg%3E')] bg-repeat-x bg-bottom"></div>
     </section>
   );
 }

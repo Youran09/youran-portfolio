@@ -86,13 +86,13 @@ const Contact: React.FC = () => {
               <div className="info-content">
                 <p>
                   <strong>Email:</strong>
-                  <a href="mailto:youran.tao.jensen@example.com">
-                    youran.tao.jensen@example.com
+                  <a href="mailto:youran0909@hotmail.com">
+                    youran0909@hotmail.com
                   </a>
                 </p>
                 <p>
                   <strong>Phone:</strong>
-                  <a href="tel:+4512345678">+45 12 34 56 78</a>
+                  <a href="tel:+4512345678">+45 53 80 52 09</a>
                 </p>
                 <p>
                   <strong>Location:</strong>
@@ -100,61 +100,44 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             </motion.div>
+          </motion.div>
 
-            <motion.div className="info-item" variants={itemVariants}>
-              <h3>Connect</h3>
-              <div className="social-links">
+          {/* Connect box as a visually distinct card below Contact Information */}
+          <div className="connect-box bg-[#0a192f]/60 p-6 rounded-xl border border-cyan-400/10 mt-6">
+            <h3>Connect</h3>
+            <div className="flex flex-col gap-4 text-lg">
+              <p>
                 <a
-                  href="https://linkedin.com/in/youran-tao-jensen"
+                  href="https://www.linkedin.com/in/youran-tao-jensen-9aa86ba6/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-blue-500 font-bold underline"
                 >
                   LinkedIn
                 </a>
+              </p>
+              <p>
                 <a
-                  href="https://github.com/youran-tao-jensen"
+                  href="https://github.com/Youran09"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-blue-500 font-bold underline"
                 >
                   GitHub
                 </a>
+              </p>
+              <p>
                 <a
-                  href="https://twitter.com/youran-tao-jensen"
+                  href="https://www.youtube.com/@youranjensen37"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-blue-500 font-bold underline"
                 >
-                  Twitter
+                  YouTube
                 </a>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="references"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            <h3>References</h3>
-            <div className="references-grid">
-              {references.map((reference, index) => (
-                <motion.div
-                  key={index}
-                  className="reference-card"
-                  variants={itemVariants}
-                >
-                  <h4>{reference.name}</h4>
-                  <p className="position">{reference.position}</p>
-                  <p className="company">{reference.company}</p>
-                  <p className="relationship">{reference.relationship}</p>
-                  <div className="contact-details">
-                    <a href={`mailto:${reference.email}`}>{reference.email}</a>
-                    <a href={`tel:${reference.phone}`}>{reference.phone}</a>
-                  </div>
-                </motion.div>
-              ))}
+              </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

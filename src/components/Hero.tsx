@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
             <span className="title-gradient">Youran Tao Jensen</span>
           </h1>
 
-          <h2 className="hero-subtitle">MSc Computer Science Student</h2>
+          <h2 className="hero-subtitle">MSc Computer Science Graduate</h2>
 
           <div className="divider">
             <div className="divider-line"></div>

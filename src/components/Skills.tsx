@@ -6,32 +6,196 @@ interface Skill {
   name: string;
   icon: string;
   level: number;
-  category: "frontend" | "backend" | "tools" | "languages";
+  category:
+    | "frontend"
+    | "backend"
+    | "tools"
+    | "languages"
+    | "linear-algebra"
+    | "analysis"
+    | "probability"
+    | "functional"
+    | "testing"
+    | "ml"
+    | "programming"
+    | "algorithms"
+    | "datastructures"
+    | "architecture"
+    | "quality"
+    | "data"
+    | "systems"
+    | "ux"
+    | "hardware"
+    | "communication"
+    | "research"
+    | "spoken"
+    | "algods";
 }
 
 const skills: Skill[] = [
-  // Frontend
-  { name: "React", icon: "⚛️", level: 90, category: "frontend" },
-  { name: "TypeScript", icon: "📘", level: 85, category: "frontend" },
-  { name: "HTML5", icon: "🌐", level: 95, category: "frontend" },
-  { name: "CSS3/SCSS", icon: "🎨", level: 90, category: "frontend" },
-  { name: "Next.js", icon: "⚡", level: 80, category: "frontend" },
-
-  // Backend
-  { name: "Node.js", icon: "🟢", level: 85, category: "backend" },
-  { name: "Express", icon: "🚂", level: 80, category: "backend" },
-  { name: "MongoDB", icon: "🍃", level: 75, category: "backend" },
-  { name: "PostgreSQL", icon: "🐘", level: 70, category: "backend" },
-
-  // Tools
-  { name: "Git", icon: "📦", level: 85, category: "tools" },
-  { name: "Docker", icon: "🐳", level: 70, category: "tools" },
-  { name: "AWS", icon: "☁️", level: 65, category: "tools" },
-
-  // Languages
+  // Programming Languages
   { name: "JavaScript", icon: "📜", level: 90, category: "languages" },
   { name: "Python", icon: "🐍", level: 80, category: "languages" },
   { name: "Java", icon: "☕", level: 75, category: "languages" },
+
+  // Spoken Languages
+  {
+    name: "Mandarin Chinese – Native fluency",
+    icon: "🇨🇳",
+    level: 100,
+    category: "spoken",
+  },
+  {
+    name: "English – Upper-intermediate (B2)",
+    icon: "🇬🇧",
+    level: 80,
+    category: "spoken",
+  },
+  {
+    name: "Danish – Upper-intermediate (B2)",
+    icon: "🇩🇰",
+    level: 80,
+    category: "spoken",
+  },
+
+  // Programming & Architecture
+  {
+    name: "Algorithmic Problem Solving",
+    icon: "🧠",
+    level: 85,
+    category: "programming",
+  },
+  {
+    name: "Object-Oriented Design & UML",
+    icon: "📐",
+    level: 80,
+    category: "architecture",
+  },
+  {
+    name: "Modular Code & Namespace Design",
+    icon: "📦",
+    level: 80,
+    category: "architecture",
+  },
+
+  // Quality & Testing
+  {
+    name: "Unit Testing & Debugging",
+    icon: "✔️",
+    level: 80,
+    category: "quality",
+  },
+  {
+    name: "Code Reviews & Documentation",
+    icon: "📝",
+    level: 80,
+    category: "quality",
+  },
+
+  // Data & Analytics
+  {
+    name: "Linear Regression & Least-Squares",
+    icon: "📈",
+    level: 80,
+    category: "data",
+  },
+  {
+    name: "Data Visualization & Plotting",
+    icon: "📉",
+    level: 80,
+    category: "data",
+  },
+
+  // Machine Learning
+  {
+    name: "Supervised Learning (KNN & Regression)",
+    icon: "🤖",
+    level: 80,
+    category: "ml",
+  },
+  {
+    name: "Neural Networks & Deep Learning",
+    icon: "🧠",
+    level: 70,
+    category: "ml",
+  },
+  { name: "Computer Vision", icon: "👁️", level: 70, category: "ml" },
+
+  // Algorithms & Data Structures
+  {
+    name: "Asymptotic Complexity Analysis",
+    icon: "⏱️",
+    level: 80,
+    category: "algods",
+  },
+  {
+    name: "Graph Algorithms (BFS, DFS, MST)",
+    icon: "🕸️",
+    level: 80,
+    category: "algods",
+  },
+  {
+    name: "Efficient Data Structures (Heaps, Trees)",
+    icon: "🌳",
+    level: 75,
+    category: "algods",
+  },
+
+  // Systems
+  {
+    name: "Performance Profiling & Optimization",
+    icon: "⚡",
+    level: 80,
+    category: "systems",
+  },
+  {
+    name: "Concurrency & Thread Safety",
+    icon: "🔄",
+    level: 80,
+    category: "systems",
+  },
+  {
+    name: "Memory Management & Virtual Memory",
+    icon: "💾",
+    level: 80,
+    category: "systems",
+  },
+
+  // Tools & DevOps
+  { name: "SQL Database", icon: "🗄️", level: 80, category: "tools" },
+  { name: "Power BI", icon: "📊", level: 75, category: "tools" },
+  { name: "Figma", icon: "🎨", level: 75, category: "tools" },
+  { name: "AI/API Integration", icon: "🤖", level: 75, category: "tools" },
+
+  // UX & Interaction
+  {
+    name: "Usability Evaluation & Testing",
+    icon: "🧪",
+    level: 80,
+    category: "ux",
+  },
+  {
+    name: "User Research & Prototyping",
+    icon: "🔍",
+    level: 75,
+    category: "ux",
+  },
+
+  // Communication
+  {
+    name: "Technical Communication & Academic Writing",
+    icon: "✍️",
+    level: 80,
+    category: "communication",
+  },
+
+  // Research
+  {
+    name: "Scientific Literature Analysis",
+    icon: "🔍",
+    level: 75,
+    category: "research",
+  },
 ];
 
 const Skills: React.FC = () => {
@@ -60,10 +224,16 @@ const Skills: React.FC = () => {
   };
 
   const categories = {
-    frontend: "Frontend Development",
-    backend: "Backend Development",
-    tools: "Tools & Platforms",
+    tools: "Tools & DevOps",
     languages: "Programming Languages",
+    spoken: "Spoken Languages",
+    algods: "Algorithms & Data Structures",
+    architecture: "Software Architecture",
+    quality: "Code Quality & Testing",
+    ml: "Machine Learning",
+    data: "Data Science & Analytics",
+    systems: "Systems & DevOps",
+    ux: "UX & Interaction",
   };
 
   return (
