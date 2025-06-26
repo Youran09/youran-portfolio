@@ -19,7 +19,7 @@ const education: TimelineItem[] = [
   {
     title: "MSc in Computer Science",
     institution: "University of Copenhagen",
-    period: "2025 - 2025",
+    period: "2023 - 2025",
     GPA: "3.5/4",
     courses:
       "Advanced Algorithms and Data Structures, Advanced Computer Systems, Machine Learning A, Advanced Topics in Human-Centered Computing",
