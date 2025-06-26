@@ -56,36 +56,9 @@ const education: TimelineItem[] = [
     GPA: "3.19/4",
     courses:
       "Interaction Design, Linear Algebra in Computer Science, Software Development, Mathematical Analysis & Probability Theory (MASD), Modelling & Analysis of Data, Computer Systems, Implementation of Programming Languages, Algorithms and Data Structures, Development of Information Systems, Programming Language Design, Philosophy of Computer Science",
-    thesis: [
-      {
-        name: "Whales Location Tracking - Analyzing Spatial Distributions using Ripley-K Function",
-        slug: "whales-location-tracking",
-        details: {
-          label: "Bachelor's Thesis",
-          projectTitle:
-            "Analyzing Spatial Distributions Using Ripley-K Function",
-          authors: "Muhan Zhao & Youran Tao Jensen",
-          supervisor: "François Bernard Lauze",
-          university: "University of Copenhagen, June 25, 2025",
-          objective:
-            "To implement and evaluate the Ripley-K function as a tool for characterizing the spatial arrangement—clustering or dispersion—of point processes in 2D, on a sphere, and on arbitrary triangular meshes, and to demonstrate its application on real-world data.",
-          keyContributions: [
-            "Theoretical Foundations: Reviewed binomial and Poisson distributions, Poisson point processes, uniform and directional (von Mises–Fisher, Watson) models, and Shannon entropy.",
-            "2D Ripley-K Implementation: Developed sampling algorithms for uniform and mixture point processes in the plane. Implemented Ripley-K with and without edge-correction; validated via simulations.",
-            "Spherical Ripley-K: Simulated point processes on the unit sphere using great-circle distances. Extended the K-function to account for surface geometry; compared uniform vs. clustered distributions.",
-            "Mesh-Based Ripley-K: Constructed an icosahedron-derived triangular sphere mesh; implemented uniform sampling on triangles. Computed geodesic distances on the mesh to evaluate Ripley-K, and confirmed consistency with great-circle results.",
-            "Real-World Applications: Whale locations: Mapped sightings onto an ocean-only mesh; Ripley-K revealed significant clustering. Mitochondrial crista junctions: Analyzed junction points on 3D mitochondrial meshes; mean K-function suggested near-uniformity, with caveats about sample imbalance and shape effects.",
-          ],
-          results: [
-            "2D & Spherical Domains: Ripley-K accurately distinguishes random, clustered, and regular patterns across dimensions.",
-            "Mesh Analysis: Geodesic-based K-function on meshes aligns closely with analytic spherical results, validating the mesh-projection pipeline.",
-            "Biological & Ecological Data: Whale sightings exhibit spatial clustering—likely driven by habitat or migration corridors. Crista junctions mostly appear uniform, though larger mitochondria samples dominate the mean; suggests future work on weighted analyses and spatio-temporal extensions.",
-          ],
-          conclusion:
-            "This project demonstrates a flexible, end-to-end framework for computing Ripley-K in diverse settings—Euclidean, spherical, and mesh surfaces—and showcases its utility on both ecological and cellular data. All code and datasets are publicly available at the project's GitHub repository.",
-        },
-      },
-    ],
+    thesis:
+      "Whales Location Tracking - Analyzing Spatial Distributions using Ripley-K Function",
+    thesisSlug: "whales-location-tracking",
     image: "/images/ku.png",
   },
   {
@@ -196,7 +169,9 @@ const Education = () => {
                   {edu.thesis && (
                     <div className="mt-3">
                       <div className="font-semibold text-cyan-300 mb-1">
-                        Master's Thesis:
+                        {edu.title.includes("BSc")
+                          ? "Bachelor's Thesis:"
+                          : "Master's Thesis:"}
                       </div>
                       <span
                         className="project-tag bg-cyan-900/60 text-cyan-200 px-3 py-1 rounded-full text-xs font-medium cursor-pointer hover:bg-cyan-400/80 hover:text-slate-900 transition"
