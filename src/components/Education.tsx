@@ -56,7 +56,7 @@ const education: TimelineItem[] = [
     GPA: "3.19/4",
     courses:
       "Interaction Design, Linear Algebra in Computer Science, Software Development, Mathematical Analysis & Probability Theory (MASD), Modelling & Analysis of Data, Computer Systems, Implementation of Programming Languages, Algorithms and Data Structures, Development of Information Systems, Programming Language Design, Philosophy of Computer Science",
-    projects: [
+    thesis: [
       {
         name: "Whales Location Tracking - Analyzing Spatial Distributions using Ripley-K Function",
         slug: "whales-location-tracking",

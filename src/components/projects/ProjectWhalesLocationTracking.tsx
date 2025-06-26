@@ -38,7 +38,8 @@ export default function ProjectWhalesLocationTracking() {
         {/* Header */}
         <header className="mb-8" style={{ textAlign: "left" }}>
           <h1 className="text-3xl md:text-4xl font-bold text-cyan-300 mb-4 leading-tight">
-            Analyzing Spatial Distributions Using Ripley-K Function
+            Whales Location Tracking – Analyzing Spatial Distributions Using
+            Ripley-K Function
           </h1>
           <div className="text-cyan-100 text-sm mb-1">
             <strong>Bachelor's Thesis</strong>
