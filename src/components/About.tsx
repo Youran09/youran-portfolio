@@ -69,7 +69,7 @@ export default function AboutMe() {
                 global trends and technological developments. As an INFP, I
                 bring creativity, strong perceptive insight, and analytical
                 rigor—flourishing in roles that value innovation over rigid
-                routines. Now I'm pursuing my solo-founder AI unicorn startup.
+                routines.
               </p>
             </div>
           </div>
