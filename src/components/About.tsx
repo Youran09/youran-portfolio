@@ -45,31 +45,34 @@ export default function AboutMe() {
               inView ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
             )}
           >
-            <div className="space-y-4 text-gray-100 text-lg">
+            <div className="space-y-6 text-gray-100 text-lg leading-relaxed">
               <p>
-                My name is Youran, based in Copenhagen, with a BSc in
-                International Relations in Asia from CBS, and both a Bsc and an
-                MSc in Computer Science from KU, I bridge business and
-                engineering through a multicultural lens. I thrive in
-                international, multilingual environments—fluent in Danish,
-                English, and Chinese.
+                <span className="text-cyan-400 font-semibold">Copenhagen-based software developer</span> with a unique
+                interdisciplinary background—studied International Relations in Asia at CBS before
+                completing BSc and MSc in Computer Science at University of Copenhagen, with exchange
+                studies at Hong Kong University of Science and Technology (HKUST). I specialize in
+                bridging business strategy and technical implementation across multicultural contexts,
+                operating fluently in Danish, English, and Chinese.
               </p>
               <p>
-                My career has taken me from founding and managing service
-                startups to hands-on execution in trade, customs, and
-                cross-border operations. I've built SQL-based support software
-                and Power BI reports that inform executive decision-making, and
-                I've UX/UI-designed chatbots and AI-driven automation tools to
-                streamline workflows and elevate user experiences. I have
-                conducted research into dyslexia education support, coral image
-                segmentation, and whale-location tracking.
+                With experience spanning <span className="text-cyan-300">entrepreneurship</span> to <span className="text-cyan-300">innovative solutions</span>,
+                I've founded and scaled service startups while gaining practical experience in
+                cross-border trade facilitation and customs operations. My technical portfolio includes
+                developing SQL-based business intelligence systems, Power BI dashboards for C-level
+                decision support, and AI-powered automation tools with UX/UI design in Figma that
+                optimize organizational workflows.
               </p>
               <p>
-                I think holistically and make forward-looking decisions based on
-                global trends and technological developments. As an INFP, I
-                bring creativity, strong perceptive insight, and analytical
-                rigor—flourishing in roles that value innovation over rigid
-                routines.
+                My research contributions span <span className="text-cyan-300">accessibility technology</span> for dyslexia education,
+                <span className="text-cyan-300">computer vision</span> applications in marine conservation (coral reef segmentation),
+                and <span className="text-cyan-300">spatial statistics</span> using Ripley's K-function for whale location tracking—demonstrating
+                my passion for developing innovative solutions with technology.
+              </p>
+              <p>
+                I thrive at the intersection of creativity and technology, building practical solutions
+                that address real-world challenges. My multicultural background and entrepreneurial
+                mindset drive me to explore unconventional approaches and create meaningful impact
+                through innovation.
               </p>
             </div>
           </div>
