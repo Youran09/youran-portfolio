@@ -51,11 +51,10 @@ export default function ProjectDadaquaInnovation() {
           </p>
 
           {/* Dadaab Photo 1 */}
-          <div style={{ margin: "2rem 0", textAlign: "center" }}>
+          <div className="project-image">
             <img
               src="/images/dadaab2.png"
               alt="Dadaab solar-powered water system"
-              className="project-image"
             />
           </div>
         </section>
@@ -72,11 +71,10 @@ export default function ProjectDadaquaInnovation() {
           </ul>
 
           {/* Dadaab Photo 2 */}
-          <div style={{ margin: "2rem 0", textAlign: "center" }}>
+          <div className="project-image">
             <img
               src="/images/dadaab1.png"
               alt="Dadaab refugee camp water infrastructure"
-              className="project-image"
             />
           </div>
         </section>
@@ -98,11 +96,10 @@ className="skill-tag"
           </div>
 
           {/* Dadaab Photo 3 */}
-          <div style={{ margin: "2rem 0", textAlign: "center" }}>
+          <div className="project-image">
             <img
               src="/images/dadaab.png"
               alt="Dadaab sustainable water solution implementation"
-              className="project-image"
             />
           </div>
         </section>
