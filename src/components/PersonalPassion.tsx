@@ -54,27 +54,27 @@ const PersonalPassion: React.FC = () => {
           <motion.div className="gallery-item" variants={itemVariants}>
             <img
               src="/images/diving-1.jpg"
-              alt="Scuba diving in the Great Barrier Reef"
+              alt="Swimming with whale sharks in Similan Islands"
             />
             <div className="caption">
-              <h3>Great Barrier Reef</h3>
-              <p>Exploring the world's largest coral reef system</p>
+              <h3>Similan Islands</h3>
+              <p>Swimming with whale sharks on a liveaboard expedition</p>
             </div>
           </motion.div>
 
           <motion.div className="gallery-item" variants={itemVariants}>
-            <img src="/images/diving-2.jpg" alt="Night diving in Thailand" />
+            <img src="/images/diving-2.jpg" alt="Mimicking whale shark swimming" />
             <div className="caption">
-              <h3>Night Diving</h3>
-              <p>Discovering the nocturnal marine life in Thailand</p>
+              <h3>Whale Shark Encounter</h3>
+              <p>Mimicking the swimming style of gentle giants in Thailand</p>
             </div>
           </motion.div>
 
           <motion.div className="gallery-item" variants={itemVariants}>
-            <img src="/images/diving-3.jpg" alt="Deep sea exploration" />
+            <img src="/images/diving-3.jpg" alt="Shark feeding in Maldives" />
             <div className="caption">
-              <h3>Deep Sea</h3>
-              <p>Venturing into the mysterious depths</p>
+              <h3>Maldives Adventure</h3>
+              <p>Feeding sharks on a liveaboard expedition</p>
             </div>
           </motion.div>
         </motion.div>

@@ -1,0 +1,279 @@
+@use 'sass:color';
+@use '../variables' as *;
+
+// Wave animation keyframes
+@keyframes waveFlow {
+  0%, 100% { transform: translateY(0); }
+  33% { transform: translateY(-8px); }
+  66% { transform: translateY(-4px); }
+}
+
+@keyframes waveBreathe {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) scaleY(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes waveShimmer {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateY(-6px);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+// Base wave divider styles
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 120px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+
+  // Debug border (remove in production)
+  // border: 2px solid red;
+
+  .wave-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+
+  .wave-layer-2 {
+    animation-delay: -1s;
+    opacity: 0.8;
+  }
+
+  .wave-layer-3 {
+    animation-delay: -2s;
+    opacity: 0.6;
+  }
+
+  .wave-layer-4 {
+    animation-delay: -3s;
+    opacity: 0.4;
+  }
+
+  .wave-layer-5 {
+    animation-delay: -4s;
+    opacity: 0.3;
+  }
+
+  .wave-layer-6 {
+    animation-delay: -5s;
+    opacity: 0.2;
+  }
+
+  .wave-path {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  }
+
+  .wave-path-secondary {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+  }
+
+  .wave-path-tertiary {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.03));
+  }
+}
+
+// Type A: Experience → Education
+.wave-divider-a {
+  .wave-svg {
+    animation: waveFlow 3s ease-in-out infinite;
+  }
+
+  .wave-layer-2 {
+    animation: waveFlow 4s ease-in-out infinite reverse;
+  }
+
+  .wave-layer-3 {
+    animation: waveBreathe 5s ease-in-out infinite;
+  }
+
+  .wave-layer-4 {
+    animation: waveShimmer 6s ease-in-out infinite;
+  }
+
+  .wave-layer-5 {
+    animation: waveFlow 7s ease-in-out infinite reverse;
+  }
+
+  .wave-layer-6 {
+    animation: waveBreathe 8s ease-in-out infinite;
+  }
+
+  // Add deeper sea effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba($deep-sea-blue, 0.1) 50%,
+      rgba($deep-sea-blue, 0.2) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+// Type B: Education → Projects
+.wave-divider-b {
+  .wave-svg {
+    animation: waveFlow 3.5s ease-in-out infinite reverse;
+  }
+
+  .wave-layer-2 {
+    animation: waveShimmer 4.5s ease-in-out infinite;
+  }
+
+  .wave-layer-3 {
+    animation: waveFlow 5.5s ease-in-out infinite;
+  }
+
+  .wave-layer-4 {
+    animation: waveBreathe 6.5s ease-in-out infinite;
+  }
+
+  .wave-layer-5 {
+    animation: waveShimmer 7.5s ease-in-out infinite reverse;
+  }
+
+  .wave-layer-6 {
+    animation: waveFlow 8.5s ease-in-out infinite;
+  }
+
+  // Add middle depth effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($mint, 0.02) 0%,
+      transparent 50%,
+      rgba($deep-sea-blue, 0.15) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+// Type C: Projects bottom (optional)
+.wave-divider-c {
+  .wave-svg {
+    animation: waveBreathe 4s ease-in-out infinite;
+  }
+
+  .wave-layer-2 {
+    animation: waveFlow 5s ease-in-out infinite;
+  }
+
+  .wave-layer-3 {
+    animation: waveShimmer 3s ease-in-out infinite reverse;
+  }
+
+  .wave-layer-4 {
+    animation: waveFlow 6s ease-in-out infinite;
+  }
+
+  .wave-layer-5 {
+    animation: waveBreathe 7s ease-in-out infinite;
+  }
+
+  .wave-layer-6 {
+    animation: waveShimmer 4s ease-in-out infinite;
+  }
+
+  // Add surface effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($mint, 0.05) 0%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .wave-divider {
+    height: 80px;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+
+    .wave-svg {
+      // Simplify animations on mobile for performance
+      animation-duration: 30s !important;
+    }
+
+    .wave-layer-2,
+    .wave-layer-3 {
+      display: none; // Hide extra layers on mobile
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wave-divider {
+    height: 60px;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+  }
+}
+
+// High contrast mode support
+@media (prefers-reduced-motion: reduce) {
+  .wave-divider {
+    .wave-svg {
+      animation: none;
+    }
+
+    .wave-layer-2,
+    .wave-layer-3 {
+      animation: none;
+    }
+  }
+}
+
+// Enhanced performance
+.wave-divider {
+  // Remove 3D transforms that may create stacking context issues
+
+  .wave-svg {
+    // Simplified performance
+  }
+}

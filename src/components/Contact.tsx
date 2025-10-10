@@ -67,6 +67,7 @@ const Contact: React.FC = () => {
     <section className="contact" id="contact">
       <div className="contact-content">
         <motion.h2
+          className="text-3xl font-bold text-center text-cyan-300 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
@@ -74,70 +75,98 @@ const Contact: React.FC = () => {
           Get in Touch
         </motion.h2>
 
-        <div className="contact-grid" ref={ref}>
+        <div className="max-w-6xl mx-auto" ref={ref}>
           <motion.div
-            className="contact-info"
+            className="flex flex-wrap justify-center gap-8"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly",
+              alignItems: "flex-start",
+              gap: "2rem"
+            }}
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <motion.div className="info-item" variants={itemVariants}>
-              <h3>Contact Information</h3>
-              <div className="info-content">
-                <p>
-                  <strong>Email:</strong>
-                  <a href="mailto:youran0909@hotmail.com">
-                    youran0909@hotmail.com
-                  </a>
-                </p>
-                <p>
-                  <strong>Phone:</strong>
-                  <a href="tel:+4512345678">+45 53 80 52 09</a>
-                </p>
-                <p>
-                  <strong>Location:</strong>
-                  <span>Copenhagen, Denmark</span>
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
+            {/* Email Card */}
+            <motion.a
+              href="mailto:youran0909@hotmail.com"
+              className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-cyan-400/40 hover:scale-105 text-center group cursor-pointer w-40 h-32 flex flex-col items-center justify-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-cyan-200 font-medium text-sm flex items-center gap-3">
+                <span>✉️</span>
+                <span>Email</span>
+              </h3>
+            </motion.a>
 
-          {/* Connect box as a visually distinct card below Contact Information */}
-          <div className="connect-box bg-[#0a192f]/60 p-6 rounded-xl border border-cyan-400/10 mt-6">
-            <h3>Connect</h3>
-            <div className="flex flex-col gap-4 text-lg">
-              <p>
-                <a
-                  href="https://www.linkedin.com/in/youran-tao-jensen-9aa86ba6/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 font-bold underline"
-                >
-                  LinkedIn
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://github.com/Youran09"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 font-bold underline"
-                >
-                  GitHub
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://www.youtube.com/@youranjensen37"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 font-bold underline"
-                >
-                  YouTube
-                </a>
-              </p>
-            </div>
-          </div>
+            {/* Phone Card */}
+            <motion.a
+              href="tel:+4553805209"
+              className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-cyan-400/40 hover:scale-105 text-center group cursor-pointer w-40 h-32 flex flex-col items-center justify-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-cyan-200 font-medium text-sm flex items-center gap-3">
+                <span>📱</span>
+                <span>Phone</span>
+              </h3>
+            </motion.a>
+
+            {/* Location Card */}
+            <motion.div
+              className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/20 shadow-lg text-center w-40 h-32 flex flex-col items-center justify-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-cyan-200 font-medium text-sm flex items-center gap-3">
+                <span>📍</span>
+                <span>Copenhagen</span>
+              </h3>
+            </motion.div>
+
+            {/* LinkedIn Card */}
+            <motion.a
+              href="https://www.linkedin.com/in/youran-tao-jensen-9aa86ba6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-400/40 hover:scale-105 text-center group cursor-pointer w-40 h-32 flex flex-col items-center justify-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-cyan-200 font-medium text-sm flex items-center gap-3">
+                <span>💼</span>
+                <span>LinkedIn</span>
+              </h3>
+            </motion.a>
+
+            {/* GitHub Card */}
+            <motion.a
+              href="https://github.com/Youran09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-400/40 hover:scale-105 text-center group cursor-pointer w-40 h-32 flex flex-col items-center justify-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-cyan-200 font-medium text-sm flex items-center gap-3">
+                <span>💻</span>
+                <span>GitHub</span>
+              </h3>
+            </motion.a>
+
+            {/* YouTube Card */}
+            <motion.a
+              href="https://www.youtube.com/@youranjensen37"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-6 border border-cyan-400/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-red-400/40 hover:scale-105 text-center group cursor-pointer w-40 h-32 flex flex-col items-center justify-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-cyan-200 font-medium text-sm flex items-center gap-3">
+                <span>🎥</span>
+                <span>YouTube</span>
+              </h3>
+            </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>

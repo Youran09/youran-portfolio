@@ -44,8 +44,9 @@
     margin-top: 3rem;
 
     @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
+      grid-template-columns: 1fr 2fr;
+      align-items: start;
+      gap: 3rem;
     }
   }
 
@@ -92,18 +93,7 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border: 2px solid rgba($mint, 0.2);
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        color.adjust($deep-sea-blue, $alpha: -0.3)
-      );
-      z-index: 1;
-    }
+    max-height: 400px;
 
     img {
       width: 100%;

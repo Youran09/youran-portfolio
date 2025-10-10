@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 import PersonalPassion from "./components/PersonalPassion";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
+import Projects from "./components/Projects";
 import "./styles/main.scss";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ProjectDesigningCollaborativeTechnologies from "./components/projects/ProjectDesigningCollaborativeTechnologies";
@@ -13,6 +14,10 @@ import ProjectCriticalMaking from "./components/projects/ProjectCriticalMaking";
 import ProjectCoralSegmentation from "./components/projects/ProjectCoralSegmentation";
 import ProjectTEMGConsulting from "./components/projects/ProjectTEMGConsulting";
 import ProjectWhalesLocationTracking from "./components/projects/ProjectWhalesLocationTracking";
+import ProjectDadaquaInnovation from "./components/projects/ProjectDadaquaInnovation";
+import ProjectDeloitteCaseChallenge from "./components/projects/ProjectDeloitteCaseChallenge";
+import ProjectChinaASEANAITourism from "./components/projects/ProjectChinaASEANAITourism";
+import ProjectCresento from "./components/projects/ProjectCresento";
 
 const ProjectDetail = () => {
   return (
@@ -53,6 +58,7 @@ function App() {
                 <About />
                 <Experience />
                 <Education />
+                <Projects />
                 <Skills />
                 <PersonalPassion />
                 <Contact />
@@ -79,6 +85,22 @@ function App() {
         <Route
           path="/project/whales-location-tracking"
           element={<ProjectWhalesLocationTracking />}
+        />
+        <Route
+          path="/project/dadaqua-innovation"
+          element={<ProjectDadaquaInnovation />}
+        />
+        <Route
+          path="/project/deloitte-case-challenge"
+          element={<ProjectDeloitteCaseChallenge />}
+        />
+        <Route
+          path="/project/china-asean-ai-tourism"
+          element={<ProjectChinaASEANAITourism />}
+        />
+        <Route
+          path="/project/cresento"
+          element={<ProjectCresento />}
         />
         <Route path="/project/:projectName" element={<ProjectDetail />} />
       </Routes>
