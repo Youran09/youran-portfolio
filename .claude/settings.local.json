@@ -11,7 +11,10 @@
       "Bash(npx tsc:*)",
       "Bash(npx typescript:*)",
       "WebFetch(domain:lovable.dev)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git push:*)",
+      "Bash(npx vercel:*)",
+      "Bash(git remote set-url:*)"
     ],
     "deny": [],
     "ask": []

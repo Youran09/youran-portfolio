@@ -73,3 +73,4 @@ yarn-error.log*
 # Jupyter Notebook
 *.ipynb
 .ipynb_checkpoints
+.vercel
