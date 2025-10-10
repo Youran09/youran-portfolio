@@ -7,6 +7,7 @@ interface ProjectItem {
   description: string;
   type: string;
   period: string;
+  year: string;
   technologies?: string[];
   slug: string;
   image?: string;
@@ -19,6 +20,7 @@ const projects: ProjectItem[] = [
     description: "Participated in CBS-Deloitte partnership program focusing on adaptability and problem-solving skills. Developed a dynamic onboarding framework for Deloitte Denmark through collaborative competition among 20 students, culminating in final presentation to expert panel of industry leaders.",
     type: "Case Challenge",
     period: "Oct - Nov 2025",
+    year: "2025",
     technologies: ["MVP Development", "UX/UI Design", "Data-Driven Strategy", "Talent Development"],
     slug: "deloitte-case-challenge",
     image: "/images/deloitte0.png"
@@ -28,6 +30,7 @@ const projects: ProjectItem[] = [
     description: "Designed solar-powered borehole system (Agri-PV) to replace diesel pumps at Dadaab refugee camp in Kenya. Solution reduces operational costs, environmental impact, and enhances water security through private investment and NGO partnerships.",
     type: "University Collaboration Project",
     period: "Sep 2025",
+    year: "2025",
     technologies: ["Sustainable Design", "Renewable Energy Systems", "Cross-disciplinary Collaboration"],
     slug: "dadaqua-innovation",
     image: "/images/dadaab2.png",
@@ -38,6 +41,7 @@ const projects: ProjectItem[] = [
     description: "Served as tech lead for AI-driven smart tourism project, achieving 1st place among 33 projects in the ASEAN regional final. Developed MVP with innovative AI applications in cultural tourism and received the ASEAN Special Award, enhancing cross-border collaboration skills.",
     type: "Innovation Competition",
     period: "Jul - Sep 2025",
+    year: "2025",
     technologies: ["Artificial Intelligence (AI)", "Innovation Management", "Product Development", "Cross-border Collaboration"],
     slug: "china-asean-ai-tourism",
     image: "/images/ASEAN.png",
@@ -48,6 +52,7 @@ const projects: ProjectItem[] = [
     description: "Led full-stack website development and digital marketing for sports technology startup. Designed comprehensive platform with SEO optimization, content creation, and investor-focused presentation to showcase their innovative AI-powered smart shin guards technology.",
     type: "Web Development & Marketing",
     period: "Jul - Sep 2025",
+    year: "2025",
     technologies: ["Web Development", "UI/UX Design", "SEO Optimization", "Startup Showcase"],
     slug: "cresento",
     image: "/images/cresento.png",
@@ -58,6 +63,7 @@ const projects: ProjectItem[] = [
     description: "Developing deep learning models for automated coral reef image segmentation. Implemented CNN and Transformer architectures, proposing a lightweight hybrid model for efficient underwater imagery analysis to support marine conservation.",
     type: "Master's Thesis",
     period: "Jan - Jun 2025",
+    year: "2025",
     technologies: ["Python", "TensorFlow", "CNN/Transformer", "Computer Vision", "Data Annotation"],
     slug: "coral-image-segmentation",
     image: "/images/graduation.JPG"
@@ -67,6 +73,7 @@ const projects: ProjectItem[] = [
     description: "Partnered with Meta to reimagine how Viu engages millions of viewers across Asia. Designed and built AI-powered marketing tools that deliver personalized notifications at scale.",
     type: "Consulting Project",
     period: "Sep - Dec 2024",
+    year: "2024",
     technologies: ["LLM", "RAG", "Figma", "Full-Stack Development", "Digital Transformation", "Business Strategy"],
     slug: "temg-consulting",
     image: "/images/meta1.png"
@@ -76,6 +83,7 @@ const projects: ProjectItem[] = [
     description: "Developed the Knowledge Tree artifact using critical making methodologies to foster discussions about dyslexia challenges and AI opportunities. Combined laser-cut wood with ChatGPT interface, facilitating reflective conversations on technological support and neurodiversity.",
     type: "Academic Project",
     period: "Feb - Jun 2024",
+    year: "2024",
     technologies: ["Design Thinking", "Laser Cutting", "ChatGPT Integration", "AI for Education"],
     slug: "critical-making",
     image: "/images/cm1.jpg"
@@ -85,6 +93,7 @@ const projects: ProjectItem[] = [
     description: "Collaborative CSCW (Computer-Supported Cooperative Work) project with University of Copenhagen and University of Maryland, Baltimore County (UMBC). Explored hybrid collaboration challenges when teams are split between rooms and screens, uncovering turn-taking friction and how physical artifacts improve cooperation.",
     type: "Academic Project",
     period: "Feb - Apr 2024",
+    year: "2024",
     technologies: ["CSCW Research", "Ethnographic Methods", "Collaboration Design", "UX/UI Design"],
     slug: "designing-collaborative-technologies",
     image: "/images/dct3.png"
@@ -94,6 +103,7 @@ const projects: ProjectItem[] = [
     description: "Implementing the Ripley-K function for spatial analysis across 2D, spherical, and mesh surfaces. Applied to whale sighting data, revealing significant clustering patterns in marine habitats.",
     type: "Bachelor's Thesis",
     period: "Jan - Jun 2023",
+    year: "2023",
     technologies: ["Python", "Spatial Statistics", "Data Analysis", "Marine Biology"],
     slug: "whales-location-tracking",
     image: "/images/graduatebsc.png"
@@ -103,6 +113,7 @@ const projects: ProjectItem[] = [
     description: "First-year research project exploring globalization impacts on international business practices and cross-cultural management strategies.",
     type: "Academic Project",
     period: "2018",
+    year: "2018",
     technologies: ["Business Research", "International Relations", "Market Analysis"],
     slug: "globalization-international-business",
     image: "/images/cbs.png"
@@ -113,6 +124,21 @@ const Projects = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   const navigate = useNavigate();
+
+  // Group projects by year
+  const projectsByYear = projects.reduce((acc, project) => {
+    if (!acc[project.year]) {
+      acc[project.year] = [];
+    }
+    acc[project.year].push(project);
+    return acc;
+  }, {} as Record<string, ProjectItem[]>);
+
+  // Sort years in descending order
+  const sortedYears = Object.keys(projectsByYear).sort((a, b) => parseInt(b) - parseInt(a));
+
+  // Create a flat array with year markers for consistent layout
+  const projectsWithYearMarkers = projects.map(p => ({ ...p, displayYear: p.year }));
 
   return (
     <section id="projects" ref={ref} className="experience">
@@ -127,9 +153,9 @@ const Projects = () => {
             Projects
           </h2>
 
-          <div className="horizontal-timeline">
-            {/* Project cards */}
-            <div className="timeline-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          <div className="projects-container">
+            {/* Project cards in simple grid */}
+            <div className="timeline-cards">
               {projects.map((project, index) => (
                 <motion.div
                   key={index}

@@ -53,14 +53,13 @@ const WorkExperience = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="work-experience" ref={ref} className="experience">
-      <div className="container">
-        <motion.div
-          className="experience-content"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-        >
+    <div id="work-experience" ref={ref} className="experience">
+      <motion.div
+        className="experience-content"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.8 }}
+      >
           <h2 className="text-2xl font-bold mb-12 text-cyan-400 text-center">
             Experience
           </h2>
@@ -90,6 +89,9 @@ const WorkExperience = () => {
                   }
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
+                  <div className="mobile-year-marker">
+                    <span className="year-text">{exp.year}</span>
+                  </div>
                   <div className="card-content">
                     {exp.image && (
                       <img
@@ -133,9 +135,8 @@ const WorkExperience = () => {
             </div>
           </div>
         </motion.div>
-      </div>
       <WaveDivider type="A" />
-    </section>
+    </div>
   );
 };
 

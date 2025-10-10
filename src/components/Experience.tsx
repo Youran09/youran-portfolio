@@ -5,12 +5,12 @@ const Experience = () => {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="flex-1">
+        <div className="md:flex md:flex-row gap-12">
+          <div className="md:flex-1">
             <WorkExperience />
           </div>
           <div className="hidden md:block w-px bg-cyan-400/30 mx-2" />
-          <div className="flex-1">
+          <div className="hidden md:block md:flex-1">
             {/* Education removed to be a standalone section */}
           </div>
         </div>

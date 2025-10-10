@@ -29,8 +29,7 @@
     margin-bottom: 1rem;
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+      display: none !important;
     }
 
     @media (max-width: 1024px) and (min-width: 769px) {
@@ -50,6 +49,10 @@
 
     .timeline-header {
       grid-template-columns: repeat(3, 1fr) !important;
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
     }
 
     .timeline-cards {
@@ -63,10 +66,22 @@
 
     .timeline-header {
       grid-template-columns: repeat(4, 1fr) !important;
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
     }
 
     .timeline-cards {
       grid-template-columns: repeat(4, 1fr) !important;
+
+      @media (max-width: 1200px) and (min-width: 1025px) {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      @media (max-width: 1024px) and (min-width: 769px) {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
     }
   }
 
@@ -88,6 +103,27 @@
       border-radius: 20px;
       border: 2px solid rgba($mint, 0.3);
       display: inline-block;
+    }
+  }
+
+  .mobile-year-marker {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      margin-bottom: 0.75rem;
+      text-align: left;
+
+      .year-text {
+        color: $mint;
+        font-size: 1.1rem;
+        font-weight: 700;
+        background: rgba($mint, 0.1);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        border: 1px solid rgba($mint, 0.3);
+        display: inline-block;
+      }
     }
   }
 
@@ -141,8 +177,10 @@
     gap: 2rem;
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      display: flex !important;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 0;
     }
 
     @media (max-width: 1024px) and (min-width: 769px) {
@@ -294,4 +332,5 @@
       transform: translateY(-2px) scale(1.05);
     }
   }
+
 } 

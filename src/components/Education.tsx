@@ -101,6 +101,9 @@ const Education = () => {
                   }
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
+                  <div className="mobile-year-marker">
+                    <span className="year-text">{edu.year}</span>
+                  </div>
                   <div className="card-content">
                     {edu.image && (
                       <img
