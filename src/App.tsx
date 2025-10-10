@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -104,6 +105,7 @@ function App() {
         />
         <Route path="/project/:projectName" element={<ProjectDetail />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
