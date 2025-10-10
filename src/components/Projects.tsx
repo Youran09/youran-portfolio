@@ -125,21 +125,6 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true });
   const navigate = useNavigate();
 
-  // Group projects by year
-  const projectsByYear = projects.reduce((acc, project) => {
-    if (!acc[project.year]) {
-      acc[project.year] = [];
-    }
-    acc[project.year].push(project);
-    return acc;
-  }, {} as Record<string, ProjectItem[]>);
-
-  // Sort years in descending order
-  const sortedYears = Object.keys(projectsByYear).sort((a, b) => parseInt(b) - parseInt(a));
-
-  // Create a flat array with year markers for consistent layout
-  const projectsWithYearMarkers = projects.map(p => ({ ...p, displayYear: p.year }));
-
   return (
     <section id="projects" ref={ref} className="experience">
       <div className="container">
@@ -154,7 +139,6 @@ const Projects = () => {
           </h2>
 
           <div className="projects-container">
-            {/* Project cards in simple grid */}
             <div className="timeline-cards">
               {projects.map((project, index) => (
                 <motion.div

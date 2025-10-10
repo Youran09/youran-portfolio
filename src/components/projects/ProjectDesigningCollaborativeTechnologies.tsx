@@ -3,28 +3,28 @@ import { useNavigate } from "react-router-dom";
 // Placeholder components (replace with real ones if available)
 const ProjectHeader = ({ title, period, partners }: any) => (
   <div className="mb-8">
-    <h1 className="text-3xl font-bold text-cyan-300 mb-2">{title}</h1>
-    <div className="text-cyan-100 text-sm mb-1">{period}</div>
-    <div className="text-cyan-200 text-xs">{partners}</div>
+    <h1>{title}</h1>
+    <div>{period}</div>
+    <div>{partners}</div>
   </div>
 );
 const HeroImage = ({ src, alt }: any) => (
   <img
     src={src}
     alt={alt}
-    className="w-full rounded-lg shadow mb-8"
+    className="project-image"
     style={{ maxHeight: 400, objectFit: "cover" }}
   />
 );
 const ProjectSection = ({ title, content, listItems }: any) => (
   <section className="mb-12">
-    <h2 className="text-xl font-semibold text-cyan-200 mb-3">{title}</h2>
-    {content && <p className="text-slate-100 mb-2">{content}</p>}
+    <h2>{title}</h2>
+    {content && <p>{content}</p>}
     {listItems && (
-      <ul className="list-disc pl-6 space-y-2">
+      <ul>
         {listItems.map((item: any, i: number) => (
           <li key={i}>
-            <span className="font-semibold text-cyan-300">{item.title}:</span>{" "}
+            <span>{item.title}:</span>{" "}
             {item.description}
           </li>
         ))}
@@ -33,21 +33,21 @@ const ProjectSection = ({ title, content, listItems }: any) => (
   </section>
 );
 const ImageGallery = ({ images }: any) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+  <div>
     {images.map((img: any, i: number) => (
-      <div key={i} className="bg-slate-800 rounded-lg overflow-hidden shadow">
-        <img src={img.src} alt={img.alt} className="w-full h-64 object-cover" />
-        <div className="p-3 text-xs text-cyan-100">{img.caption}</div>
+      <div key={i}>
+        <img src={img.src} alt={img.alt} className="project-image" />
+        <div>{img.caption}</div>
       </div>
     ))}
   </div>
 );
 const ProjectNavigation = ({ previousProject, nextProject }: any) => (
-  <div className="flex justify-between mt-12">
-    <a href={previousProject.href} className="text-cyan-400 hover:underline">
+  <div>
+    <a href={previousProject.href}>
       {previousProject.title}
     </a>
-    <a href={nextProject.href} className="text-cyan-400 hover:underline">
+    <a href={nextProject.href}>
       {nextProject.title}
     </a>
   </div>
@@ -82,54 +82,39 @@ export default function ProjectDesigningCollaborativeTechnologies() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-900 flex flex-col items-center py-12 px-0">
-      <div
-        className="w-full bg-slate-800/80 rounded-xl shadow-lg relative z-10"
-        style={{ marginLeft: "5cm", marginRight: "5cm" }}
-      >
+    <main className="project-detail-main">
+      <div className="project-detail-container">
         {/* Go Back Button */}
         <button
           onClick={() => {
             window.location.href = "/#education";
           }}
-          className="absolute left-0 top-0 mt-4 ml-4 z-20"
-          style={{
-            background: "#fff",
-            color: "#06d6a0",
-            fontWeight: 600,
-            fontSize: "1.25rem",
-            padding: "1rem 2.5rem",
-            borderRadius: "1.5rem",
-            border: "none",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
-            cursor: "pointer",
-            transition: "background 0.2s, color 0.2s",
-          }}
+          className="project-go-back-btn"
           onMouseOver={(e) => (e.currentTarget.style.background = "#00b97b")}
           onMouseOut={(e) => (e.currentTarget.style.background = "#fff")}
         >
           ← Go Back
         </button>
         {/* Header */}
-        <header className="mb-8" style={{ textAlign: "left" }}>
-          <h1 className="text-3xl md:text-4xl font-bold text-cyan-300 mb-4 leading-tight">
+        <header className="project-header">
+          <h1>
             Hybrid Collaboration Exploratory Project
           </h1>
-          <div className="text-cyan-100 text-sm mb-1">
+          <div>
             <strong>Period:</strong> February 22 – April 4, 2024
           </div>
-          <div className="text-cyan-200 text-xs">
+          <div>
             <strong>Partners:</strong> University of Copenhagen (KU) &
             University of Maryland, Baltimore County (UMBC)
           </div>
         </header>
 
         {/* Section: What We Set Out to Do */}
-        <section className="mb-10" style={{ textAlign: "left" }}>
-          <h2 className="text-xl font-semibold text-cyan-200 mb-3">
+        <section className="project-section">
+          <h2>
             What We Set Out to Do
           </h2>
-          <p className="text-slate-100 mb-4">
+          <p>
             In this hands-on CSCW (Computer-Supported Cooperative Work) project,
             we wanted to move beyond theory and see firsthand how people
             collaborate when some are together in a room and others dial in from
@@ -141,17 +126,16 @@ export default function ProjectDesigningCollaborativeTechnologies() {
           <img
             src="/images/dct.JPG"
             alt="Hybrid collaboration session"
-            className="rounded shadow mb-6"
-            style={{ width: "100%", maxHeight: 480, height: "auto" }}
+            className="project-image"
           />
         </section>
 
         {/* Section: What We Discovered */}
-        <section className="mb-10" style={{ textAlign: "left" }}>
-          <h2 className="text-xl font-semibold text-cyan-200 mb-3">
+        <section className="project-section">
+          <h2>
             What We Discovered
           </h2>
-          <ul className="list-disc pl-6 space-y-2 text-slate-100">
+          <ul>
             <li>
               <strong className="text-cyan-300">Invisible Boundaries:</strong>{" "}
               Simple delays in audio or video can make remote voices feel
@@ -177,17 +161,16 @@ export default function ProjectDesigningCollaborativeTechnologies() {
           <img
             src="/images/dct1.JPG"
             alt="Whiteboard sketches and notes from hybrid collaboration"
-            className="rounded shadow mb-6"
-            style={{ width: "100%", maxHeight: 480, height: "auto" }}
+            className="project-image"
           />
         </section>
 
         {/* Section: Why It Matters */}
-        <section className="mb-10" style={{ textAlign: "left" }}>
-          <h2 className="text-xl font-semibold text-cyan-200 mb-3">
+        <section className="project-section">
+          <h2>
             Why It Matters
           </h2>
-          <p className="text-slate-100 mb-4">
+          <p>
             As hybrid work and learning become ever more common, understanding
             the subtle mechanics of cooperation is critical. This project showed
             that thoughtful design—even in quick, student-driven prototypes—can

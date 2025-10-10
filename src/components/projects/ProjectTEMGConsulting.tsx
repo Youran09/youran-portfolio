@@ -7,55 +7,40 @@ export default function ProjectTEMGConsulting() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <main className="min-h-screen bg-slate-900 flex flex-col items-center py-12 px-0">
-      <div
-        className="w-full bg-slate-800/80 rounded-xl shadow-lg relative z-10"
-        style={{ marginLeft: "5cm", marginRight: "5cm" }}
-      >
+    <main className="project-detail-main">
+      <div className="project-detail-container">
         {/* Go Back Button */}
         <button
           onClick={() => {
             window.location.href = "/#education";
           }}
-          className="absolute left-0 top-0 mt-4 ml-4 z-20"
-          style={{
-            background: "#fff",
-            color: "#06d6a0",
-            fontWeight: 600,
-            fontSize: "1.25rem",
-            padding: "1rem 2.5rem",
-            borderRadius: "1.5rem",
-            border: "none",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
-            cursor: "pointer",
-            transition: "background 0.2s, color 0.2s",
-          }}
+          className="project-go-back-btn"
           onMouseOver={(e) => (e.currentTarget.style.background = "#00b97b")}
           onMouseOut={(e) => (e.currentTarget.style.background = "#fff")}
         >
           ← Go Back
         </button>
         {/* Header */}
-        <header className="mb-8" style={{ textAlign: "left" }}>
-          <h1 className="text-3xl md:text-4xl font-bold text-cyan-300 mb-4 leading-tight">
+        <header className="project-header">
+          <h1>
             T&M Corporate Consulting Project: Meta LLM for Digital
             Transformation of Viu International
           </h1>
-          <div className="text-cyan-100 text-sm mb-1">
+          <div>
             <strong>Course:</strong> TEMG4950N: Meta LLM for Digital
             Transformation of Viu International
           </div>
-          <div className="text-cyan-100 text-sm mb-1">
+          <div>
             <strong>Sponsors:</strong> Meta (Facebook) & Viu International
           </div>
         </header>
 
         {/* Project Overview */}
-        <section className="mb-10" style={{ textAlign: "left" }}>
-          <h2 className="text-xl font-semibold text-cyan-200 mb-3">
+        <section className="project-section">
+          <h2>
             Project Overview
           </h2>
-          <p className="text-slate-100 mb-4">
+          <p>
             Sponsored by Meta (Facebook) and Viu International, this project
             focused on enhancing Viu's digital marketing strategies across 25
             markets. Students developed a digital transformation plan and
@@ -83,25 +68,25 @@ export default function ProjectTEMGConsulting() {
         </section>
 
         {/* Key Features */}
-        <section className="mb-10" style={{ textAlign: "left" }}>
-          <h2 className="text-xl font-semibold text-cyan-200 mb-3">
+        <section className="project-section">
+          <h2>
             Key Features
           </h2>
-          <ul className="list-disc pl-6 text-slate-100 mb-4">
+          <ul>
             <li>
-              <strong className="text-cyan-300">Information Summarizer:</strong>{" "}
+              <strong>Information Summarizer:</strong>{" "}
               a one-click deep dive into series synopses and the latest buzz,
               powered by AI-driven web-scraping, whitelisting/blacklisting, and
               Llama 3 reranking.
             </li>
             <li>
-              <strong className="text-cyan-300">Notification Generator:</strong>{" "}
+              <strong>Notification Generator:</strong>{" "}
               infinite push-message ideation tailored to diverse audiences,
               complete with multi-model translation (Llama, Google Translate,
               Marian MT) and real-time refining via "like" feedback.
             </li>
             <li>
-              <strong className="text-cyan-300">Thumbnail Selector:</strong>{" "}
+              <strong>Thumbnail Selector:</strong>{" "}
               keyword-based video analysis that delivers the perfect still in
               under two minutes, saving marketers from endless scrubbing through
               episodes.
@@ -128,11 +113,11 @@ export default function ProjectTEMGConsulting() {
         </section>
 
         {/* Reflection */}
-        <section className="mb-10" style={{ textAlign: "left" }}>
-          <h2 className="text-xl font-semibold text-cyan-200 mb-3">
+        <section className="project-section">
+          <h2>
             Reflection
           </h2>
-          <p className="text-slate-100 mb-4">
+          <p>
             As my Hong Kong exchange draws to a close and I prepare to return to
             the University of Copenhagen, I'm filled with gratitude. Learning
             Figma on the fly, assembling a full-stack AI solution, and standing
@@ -144,17 +129,7 @@ export default function ProjectTEMGConsulting() {
             <img
               src="/images/meta.png"
               alt="Meta (Facebook) logo at project site"
-              className="rounded shadow mb-8"
-              style={{
-                width: "100%",
-                maxWidth: "900px",
-                height: "506px",
-                objectFit: "cover",
-                borderRadius: "1rem",
-                boxShadow: "0 2px 16px rgba(0,0,0,0.15)",
-                display: "inline-block",
-                margin: "0 auto",
-              }}
+              className="project-image"
             />
           </div>
         </section>
